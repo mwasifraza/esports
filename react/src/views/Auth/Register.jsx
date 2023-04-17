@@ -6,7 +6,7 @@ import SocialButtons from "../../components/SocialButton/SocialButtons";
 export default function Register() {
   return (
     <>
-      <div className="flex items-center justify-center h-full px-4 lg:px-10">
+      <div className="flex items-center justify-center h-full px-4 lg:px-12">
         <div className="w-full max-w-md space-y-6">   
 
           <div>

@@ -12,10 +12,10 @@ export default function GuestLayout() {
                 <div className='col-span-2'>
                     <img src={banner} alt="banner" className='w-full h-full object-cover contrast-50' />
                 </div>
-                <div className='col-span-1 flex flex-col bg-slate-700 p-5'>
+                <div className='relative col-span-1 flex flex-col bg-slate-700 p-5'>
                     <div className='grid grid-cols-2 border border-slate-500 p-1 gap-2 rounded w-4/5 mx-auto mt-4'>
                         <button 
-                            onClick={() => navigate('/')} 
+                            onClick={() => navigate('/login')} 
                             className='py-1.5 text-center rounded text-slate-300'>
                             Login
                         </button>

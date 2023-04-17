@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer utilities {
+    /* .before-clip-circle::before{
+        clip-path: circle(400px at -30% 50%);
+    } */
+ }
