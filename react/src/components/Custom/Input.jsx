@@ -14,16 +14,17 @@ export default function CustomInput(props) {
               pt-3 
               w-full 
               text-sm 
-              text-gray-900 
+              text-white
               bg-transparent
-              border-slate-200
-              rounded-lg 
+              border-slate-500
+              rounded-md 
               appearance-none 
               focus:outline-none 
               focus:ring-0 
-              focus:border-blue-600 
+              focus:border-orange-500 
               peer" 
-              placeholder=" " 
+              placeholder=" "
+              autoComplete='off'
             />
 
             <label 
@@ -31,7 +32,7 @@ export default function CustomInput(props) {
               className="
               absolute 
               text-sm 
-              text-gray-500 
+              text-slate-300 
               duration-300 
               transform 
               -translate-y-4 
@@ -39,10 +40,10 @@ export default function CustomInput(props) {
               top-2 
               z-10 
               origin-[0] 
-              bg-white 
+              bg-slate-700 
               px-2 
               peer-focus:px-2 
-              peer-focus:text-blue-600 
+              peer-focus:text-orange-500
               peer-placeholder-shown:scale-100 
               peer-placeholder-shown:-translate-y-1/2 
               peer-placeholder-shown:top-1/2 
