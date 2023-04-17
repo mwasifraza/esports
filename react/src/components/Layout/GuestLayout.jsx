@@ -8,12 +8,12 @@ export default function GuestLayout() {
   return (
     <>
         <div className='w-full h-[100vh] flex justify-center items-center bg-slate-900/95'>
-            <div className='w-9/12 grid grid-cols-3 bg-slate-700 rounded-md overflow-hidden'>
+            <div className='w-9/12 h-[75vh] grid grid-cols-3 bg-slate-700 rounded-md overflow-hidden'>
                 <div className='col-span-2'>
                     <img src={banner} alt="banner" className='w-full h-full object-cover contrast-50' />
                 </div>
-                <div className='col-span-1 bg-slate-700 p-5'>
-                    <div className='grid grid-cols-2 border border-slate-500 p-1 gap-2 rounded w-4/5 mx-auto'>
+                <div className='col-span-1 flex flex-col bg-slate-700 p-5'>
+                    <div className='grid grid-cols-2 border border-slate-500 p-1 gap-2 rounded w-4/5 mx-auto mt-4'>
                         <button 
                             onClick={() => navigate('/')} 
                             className='py-1.5 text-center rounded text-slate-300'>
