@@ -21,7 +21,7 @@ export default function SocialButtons() {
             socialNavigations.map(item => {
               return(
                 <>
-                  <Tooltip text={item.tip}>
+                  <Tooltip bottom text={item.tip}>
                     <button className="text-2xl text-orange-500 hover:text-orange-600">
                       <FontAwesomeIcon icon={item.icon} />
                     </button>
