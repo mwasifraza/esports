@@ -1,4 +1,5 @@
 import { Fragment, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react';
 import {
   Bars3Icon,
@@ -8,7 +9,8 @@ import {
   ChatBubbleLeftEllipsisIcon,
   AtSymbolIcon,
   DocumentTextIcon,
-  LockClosedIcon
+  LockClosedIcon,
+  PlusIcon
 } from '@heroicons/react/24/outline';
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid';
 
@@ -31,6 +33,7 @@ function classNames(...classes) {
 
 export default function MainHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const navigate = useNavigate();
 
   return (
     <header className="bg-gray-900">
@@ -48,19 +51,19 @@ export default function MainHeader() {
         </div>
         
         <Popover.Group className="hidden lg:flex lg:gap-x-12">
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-300">
+          <a href="#" className="text-sm font-semibold leading-6 text-gray-300 hover:text-orange-500 transition">
             Play
           </a>
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-300">
+          <a href="#" className="text-sm font-semibold leading-6 text-gray-300 hover:text-orange-500 transition">
             Leaderboard
           </a>
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-300">
+          <a href="#" className="text-sm font-semibold leading-6 text-gray-300 hover:text-orange-500 transition">
             Tournament
           </a>
           <Popover className="relative">
-            <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-300 outline-none">
+            <Popover.Button className="group flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-300 outline-none hover:text-orange-500 transition">
               More
-              <ChevronDownIcon className="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
+              <ChevronDownIcon className="h-5 w-5 flex-none text-gray-300 group-hover:text-orange-500" aria-hidden="true" />
             </Popover.Button>
 
             <Transition
@@ -112,6 +115,17 @@ export default function MainHeader() {
             </Transition>
           </Popover>
         </Popover.Group>
+        <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:gap-x-6">
+          <a href="#" className="flex rounded bg-gradient-to-r from-orange-500 to-orange-700 px-6 py-2 text-sm text-white focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-orange-600">
+            <PlusIcon className='h-5 w-5 mr-1' />
+            Organize an Event
+          </a>
+          <button 
+            onClick={() => navigate('/login')} 
+            className="text-sm font-semibold leading-6 text-gray-300 hover:text-orange-500 transition">
+            Log in
+          </button>
+        </div>
       </nav>
 
       <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
@@ -173,6 +187,15 @@ export default function MainHeader() {
                 </a>
                 <a href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-200 hover:bg-gray-700">
                   Company
+                </a>
+              </div>
+              <div className="py-6 space-y-2">
+                <a href="#" className="-mx-3 flex rounded bg-gradient-to-r from-orange-500 to-orange-700 px-3 py-2.5 text-sm text-white focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-orange-600">
+                  <PlusIcon className='h-5 w-5 mr-1' />
+                  Organize an Event
+                </a>
+                <a href="#" className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-200 hover:bg-gray-700">
+                  Log in
                 </a>
               </div>
             </div>

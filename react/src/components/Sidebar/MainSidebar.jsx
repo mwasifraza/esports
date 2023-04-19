@@ -7,7 +7,8 @@ import {
     Squares2X2Icon, 
     ChartBarIcon, 
     UserCircleIcon, 
-    MoonIcon, 
+    MoonIcon,
+    SunIcon,
     ArrowRightOnRectangleIcon 
 } from "@heroicons/react/24/outline";
 
@@ -34,7 +35,7 @@ export default function MainSidebar() {
             </li>
             <li>
                 <a href="#" className="flex items-center justify-center p-2 text-gray-400 rounded-lg hover:text-orange-500">
-                    <span className="relative after:absolute after:top-0 after:-right-1 after:w-2.5 after:h-2.5 after:rounded-full after:bg-orange-500 after:border-2 after:border-gray-800">
+                    <span className="relative after:absolute after:top-0 after:-right-1 after:w-3 after:h-3 after:rounded-full after:bg-orange-500 after:border-[3px] after:border-gray-800">
                         <EnvelopeIcon className="w-7 h-7 stroke-[2px]" />
                     </span>
                 </a>
