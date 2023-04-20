@@ -1,9 +1,21 @@
+import { useState } from "react";
 import CustomButton from "../../components/Custom/Button";
 import CustomInput from "../../components/Custom/Input";
 import CustomRadio from "../../components/Custom/Radio";
 import SocialButtons from "../../components/SocialButton/SocialButtons";
+import Spinner from "../../components/Loader/Spinner";
 
 export default function Register() {
+  const [loading, setLoading] = useState(false);
+
+  function handleSignup(e){
+    e.preventDefault();
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 2500);
+  }
+
   return (
     <>
       <div className="flex items-center justify-center h-full px-4 lg:px-12">
@@ -15,7 +27,7 @@ export default function Register() {
             </h3>
           </div>
 
-          <form className="space-y-4">
+          <form className="space-y-4" onSubmit={handleSignup}>
 
             <div className="grid grid-cols-2 gap-2">
 
@@ -40,7 +52,7 @@ export default function Register() {
             </div>
               
             <CustomButton>
-              Create an account
+              { loading ? <><Spinner /> Loading...</> : "Create an account" }
             </CustomButton>
           </form>
 

@@ -1,8 +1,20 @@
+import { useState } from "react";
 import CustomButton from "../../components/Custom/Button";
 import CustomInput from "../../components/Custom/Input";
+import Spinner from "../../components/Loader/Spinner";
 import SocialButtons from "../../components/SocialButton/SocialButtons";
 
 export default function Login() {
+  const [loading, setLoading] = useState(false);
+
+  function handleLogin(e){
+    e.preventDefault();
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 2500);
+  }
+
   return (
     <>
       <div className="flex items-center justify-center h-full px-4 lg:px-16">
@@ -14,7 +26,7 @@ export default function Login() {
             </h3>
           </div>  
 
-          <form className="space-y-4">
+          <form className="space-y-4" onSubmit={handleLogin}>
 
             <CustomInput type="text" id="username" label="Username" />
 
@@ -41,7 +53,7 @@ export default function Login() {
             </div>
               
             <CustomButton>
-              Log into account
+              { loading ? <><Spinner /> Loading...</> : "Log into account" }
             </CustomButton>
           </form>
 

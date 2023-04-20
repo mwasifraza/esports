@@ -1,5 +1,5 @@
 import { Fragment, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react';
 import {
   Bars3Icon,
@@ -33,7 +33,6 @@ function classNames(...classes) {
 
 export default function MainHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const navigate = useNavigate();
 
   return (
     <header className="bg-gray-900">
@@ -120,11 +119,11 @@ export default function MainHeader() {
             <PlusIcon className='h-5 w-5 mr-1' />
             Organize an Event
           </a>
-          <button 
-            onClick={() => navigate('/login')} 
+          <Link 
+            to={'/login'}
             className="text-sm font-semibold leading-6 text-gray-300 hover:text-orange-500 transition">
             Log in
-          </button>
+          </Link>
         </div>
       </nav>
 

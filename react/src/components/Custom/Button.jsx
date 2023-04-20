@@ -3,21 +3,20 @@ import React from 'react'
 export default function CustomButton(props) {
   return (
     <>
-      <div className="text-center">
+      <div className="flex justify-center">
         <button
           className="
+          flex
+          items-center
+          justify-center
           rounded-md 
           bg-gradient-to-r
           from-orange-500
           to-orange-700
-          px-6
+          w-1/2
           py-2.5 
           text-sm 
           text-white 
-          focus:outline 
-          focus:outline-2 
-          focus:outline-offset-2 
-          focus:outline-orange-600
         ">
           { props.children }
         </button>
