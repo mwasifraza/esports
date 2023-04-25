@@ -1,12 +1,11 @@
 import { CalendarIcon } from "@heroicons/react/24/outline";
-import { banner3 } from "../../assets";
 
 export default function Card({ image, title, tag, date }) {
   return (
     <>
     <div className="w-full rounded-lg bg-gray-800 p-2">
-        <div>
-            <img src={image} alt="" />
+        <div className="h-48 flex items-center justify-center">
+            <img src={image} alt="image" className="brightness-75 object-cover w-full h-full" />
         </div>
         <div className="mt-4 px-2">
             <div>
@@ -16,7 +15,7 @@ export default function Card({ image, title, tag, date }) {
                 </div>
                 <div className="mt-2 flex items-center space-x-1 text-sm text-gray-300">
                     <CalendarIcon className="h-5 w-5 stroke-2" />
-                    <h4>Registration Starts <span className="text-orange-500">{ date }</span></h4>
+                    <h4>Registration Starts from <span className="text-orange-500">{ date }</span></h4>
                 </div>
             </div>
             <div className="px-2 py-4 mt-4 bg-gray-900 text-gray-400 text-sm rounded">
