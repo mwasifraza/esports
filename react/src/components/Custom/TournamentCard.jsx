@@ -1,6 +1,6 @@
 import { CalendarIcon } from "@heroicons/react/24/outline";
 
-export default function Card({ image, title, tag, date }) {
+export default function TournamentCard({ image, title, tag, date }) {
   return (
     <>
     <div className="w-full rounded-lg bg-gray-800 p-2">

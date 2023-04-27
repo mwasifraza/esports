@@ -122,7 +122,7 @@ export default function MainHeader() {
           <Link 
             to={'/login'}
             className="text-sm font-semibold leading-6 text-gray-300 hover:text-orange-500 transition">
-            Log in
+            Log in / Sign up
           </Link>
         </div>
       </nav>
@@ -194,7 +194,7 @@ export default function MainHeader() {
                   Organize an Event
                 </a>
                 <a href="#" className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-200 hover:bg-gray-700">
-                  Log in
+                  Log in / Sign up
                 </a>
               </div>
             </div>

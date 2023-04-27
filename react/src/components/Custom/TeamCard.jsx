@@ -1,4 +1,4 @@
-export default function CardSmall({ image, name, members }) {
+export default function TeamCard({ image, name, members }) {
   return (
     <>
         <div className="w-full bg-gray-800 rounded-md overflow-hidden shadow">
