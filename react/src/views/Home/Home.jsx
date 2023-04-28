@@ -1,15 +1,17 @@
-import { banner3, slide1, slide2, slide3 } from "../../assets";
+import { game1 } from "../../assets";
+import { tournaments, teams, records } from "../../config/data";
 import MainHeader from "../../components/Header/MainHeader";
 import MainSidebar from "../../components/Sidebar/MainSidebar";
 import TournamentCard from "../../components/Custom/TournamentCard";
 import TeamCard from "../../components/Custom/TeamCard";
 import HeadingOne from "../../components/Heading/HeadingOne";
 import { PlusCircleIcon } from "@heroicons/react/20/solid";
+import RecordCard from "../../components/Custom/RecordCard";
 
 export default function Home() {
   return (
     <>
-      <section className="bg-gray-950">
+      <section className="bg-gray-950 h-[5000px]">
         <div className="flex">
 
           {/* sidebar */}
@@ -31,57 +33,75 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="py-8">
+            <div className="py-10">
               <HeadingOne>Featured Tournaments</HeadingOne>
-              <div className="w-3/4 mx-auto grid grid-cols-3 gap-16 mt-10">
-                <TournamentCard 
-                  image={slide1} 
-                  title="PUBG Mobile Tournament" 
-                  tag="PUBG Mobile" 
-                  date="26th April 2023" 
-                />
-                <TournamentCard 
-                  image={slide2} 
-                  title="COD Tournament" 
-                  tag="Call of Duty" 
-                  date="29th April 2023" 
-                />
-                <TournamentCard 
-                  image={slide3} 
-                  title="Takken7 Tournament" 
-                  tag="Takken" 
-                  date="3rd May 2023" 
-                />
+              <div className="w-3/4 mx-auto grid grid-cols-3 gap-16 mt-12">
+                {
+                  tournaments.map(item => {
+                    return (
+                      <TournamentCard
+                        image={item.image}
+                        title={item.title}
+                        tag={item.tag}
+                        date={item.date}
+                      />
+                    )
+                  })
+                }
               </div>
             </div>
 
-            <div className="py-8">
+            <div className="py-10">
               <HeadingOne>Top Groups</HeadingOne>
-              <div className="w-3/4 mx-auto grid grid-cols-5 gap-6 mt-10">
-                <TeamCard 
-                  image={banner3}
-                  name="F3 Esports"
-                  members="1,562"
-                />
-                <TeamCard 
-                  image={banner3}
-                  name="Eagles Esports"
-                  members="478"
-                />
-                <TeamCard 
-                  image={banner3}
-                  name="Fearless Gamers"
-                  members="746"
-                />
-                <TeamCard 
-                  image={banner3}
-                  name="Legions Esports"
-                  members="1,065"
-                />
+              <div className="w-3/4 mx-auto grid grid-cols-5 gap-6 mt-12">
+                {
+                  teams.map(item => {
+                    return (
+                      <TeamCard
+                        image={item.image}
+                        name={item.name}
+                        members={item.members}
+                      />
+                    )
+                  })
+                }
                 <div className="bg-gray-800 rounded-md shadow flex flex-col items-center justify-center cursor-pointer">
                   <PlusCircleIcon className="h-10 w-10 text-green-400" />
                   <h2 className="text-gray-300 text-xl font-bold mt-1">Create New Team</h2>
                 </div>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-4 bg-gradient-to-b from-gray-800 to-gray-900 w-3/4 mx-auto my-6 rounded-lg">
+              <div className="pt-10">
+                <img src={game1} alt="csgo" className="h-64 mx-auto" />
+              </div>
+              <div className="col-span-2 flex items-center px-10">
+                <h1 className="uppercase text-3xl font-semibold text-gray-300 italic">
+                  Invite friends and win rewards.<br />join us today
+                </h1>
+              </div>
+              <div className="flex justify-center items-center">
+                <button className="bg-green-500 px-16 py-2 rounded text-xl text-gray-800">
+                  Register
+                </button>
+              </div>
+            </div>
+
+            <div className="py-10">
+              <HeadingOne>Our Esports Track Record</HeadingOne>
+              <div className="w-3/5 mx-auto grid grid-cols-5 mt-12">
+                {
+                  records.map(item => {
+                    return (
+                      <RecordCard
+                        icon={item.icon}
+                        number={item.number}
+                        title={item.title}
+                      />
+                    )
+                  })
+                }
               </div>
             </div>
           </main>
