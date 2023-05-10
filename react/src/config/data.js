@@ -72,3 +72,38 @@ export const records = [
         title: "worth of prizes"
     }
 ];
+
+export const tweets = [
+    {
+        name: "Harsh",
+        username: "harshgamer",
+        tweet: "a very good platform for gamers finally esports revives",
+        comments: "284",
+        retweets: "742",
+        likes: "1.3k"
+    },
+    {
+        name: "Panda",
+        username: "panda",
+        tweet: "wow! amazing platform i am being addicted to it.",
+        comments: "2.4k",
+        retweets: "10.5k",
+        likes: "95.3k"
+    },
+    {
+        name: "Mortal",
+        username: "mortal",
+        tweet: "this is something interesting i found. #gamers",
+        comments: "356",
+        retweets: "912",
+        likes: "1.8k"
+    },
+    {
+        name: "Airduz",
+        username: "airduz",
+        tweet: "finally a worthy platform to compete to world's best gamer.",
+        comments: "541",
+        retweets: "963",
+        likes: "5.4k"
+    },
+];

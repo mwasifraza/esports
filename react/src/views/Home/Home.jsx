@@ -1,9 +1,10 @@
 import { game1 } from "../../assets";
-import { tournaments, teams, records } from "../../config/data";
+import { tournaments, teams, records, tweets } from "../../config/data";
 import MainHeader from "../../components/Header/MainHeader";
 import MainSidebar from "../../components/Sidebar/MainSidebar";
 import TournamentCard from "../../components/Custom/TournamentCard";
 import TeamCard from "../../components/Custom/TeamCard";
+import CustomTweet from "../../components/Custom/Tweet";
 import HeadingOne from "../../components/Heading/HeadingOne";
 import { PlusCircleIcon } from "@heroicons/react/20/solid";
 import RecordCard from "../../components/Custom/RecordCard";
@@ -103,6 +104,28 @@ export default function Home() {
                   })
                 }
               </div>
+            </div>
+
+            <div className="py-10">
+                <h1 className="text-4xl font-bold text-gray-200 italic tracking-wide text-center uppercase">Happly Players</h1>
+                <div className="w-3/4 mx-auto grid grid-cols-4 gap-5 mt-12">
+                  {
+                    tweets.map(tweet => {
+                      return (
+                        <CustomTweet
+                          img=""
+                          name={tweet.name}
+                          username={tweet.username}
+                          comments={tweet.comments}
+                          retweets={tweet.retweets}
+                          likes={tweet.likes}
+                        >
+                          { tweet.tweet }
+                        </CustomTweet>
+                      )
+                    })
+                  }
+                </div>
             </div>
           </main>
 
