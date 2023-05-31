@@ -8,11 +8,12 @@ import CustomTweet from "../../components/Custom/Tweet";
 import HeadingOne from "../../components/Heading/HeadingOne";
 import { PlusCircleIcon } from "@heroicons/react/20/solid";
 import RecordCard from "../../components/Custom/RecordCard";
+import Footer from "../../components/Footer/Footer";
 
 export default function Home() {
   return (
     <>
-      <section className="bg-gray-950 h-[5000px]">
+      <section className="bg-gray-950">
         <div className="flex">
 
           {/* sidebar */}
@@ -107,7 +108,7 @@ export default function Home() {
             </div>
 
             <div className="py-10">
-                <h1 className="text-4xl font-bold text-gray-200 italic tracking-wide text-center uppercase">Happly Players</h1>
+                <h1 className="text-4xl font-bold text-gray-200 italic tracking-wide text-center uppercase">Happy Players</h1>
                 <div className="w-3/4 mx-auto grid grid-cols-4 gap-5 mt-12">
                   {
                     tweets.map(tweet => {
@@ -127,6 +128,8 @@ export default function Home() {
                   }
                 </div>
             </div>
+
+            <Footer></Footer>
           </main>
 
         </div>
